@@ -1,0 +1,22 @@
+<!Doctype html>
+<h1>Welcome!</h1>
+<script>
+window.onload = function(){
+    var path = window.location.pathname;
+    var beethoven = document.createElement('a');
+    beethoven.href = path + '/beethoven';
+    var bach = document.createElement('a');
+    bach.href = path + '/bach';
+    bach.text = 'Bach';
+    beethoven.text = 'Beethoven';
+    document.body.appendChild(beethoven);
+    var br = document.createElement('br')
+    document.body.appendChild(br);
+    document.body.appendChild(bach);
+}
+</script>
+<body>
+    <p> Each link contains three excerpts </p>
+    <p> Remember: you may judge each excerpt only once</p>
+
+</body>
