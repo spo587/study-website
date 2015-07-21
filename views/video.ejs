@@ -21,7 +21,7 @@ other judges, who are listening to the same excerpts with sound.  </p>
 
 Please choose a winner
 <br>
-<form action='/data' method='post' onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have are completing the form for this excerpt for the first and only time. Otherwise please close this browser window and do not complete the experiment'); return false; }">
+<form action='/data' method='post' onsubmit="if(document.getElementById('agree').checked) {alert('submission received. thank you! You can not return to the home page or exit'); return true } else { alert('Please indicate that you have are completing the form for this excerpt for the first and only time. Otherwise please close this browser window and do not complete the experiment'); return false; }">
 <input type="radio" name="winner + <%= path %>" value="1" > Pianist # 1
 <br>
 <input type="radio" name="winner + <%= path %>" value="2">Pianist # 2
@@ -45,7 +45,7 @@ What do you think this was experiment is about? <br><br>
 <textarea name="textarea" style="width:250px;height:150px;"></textarea>
 <br><br>
 Any other feedback would be greatly appreciated! <br><br>
-<textarea name="textarea" style="width:250px;height:150px;"></textarea>
+<textarea name="textarea2" style="width:250px;height:150px;"></textarea>
 <br><br>
 <input type="checkbox" name="checkbox" value="check" id="agree" /> I have completed the experiment faithfully, and this is the first time I am completing the experiment for this excerpt <br>
 
