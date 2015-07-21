@@ -123,7 +123,7 @@ function getExcerptPages(pagePaths, excerpt, length, audioOrVideo){
                     '/p/' + excerpt + '/' + String(page),
                     '/a/' + excerpt + '/' + String(page)];
         paths.forEach(function(path){
-            appRender(path, audioOrVideo + '.ejs', {links: links, path: path, noBack: noBack});
+            appRender(path, audioOrVideo + '.ejs', {links: links, path: path, subForm: subForm});
         });
         
     });
@@ -164,6 +164,20 @@ appGet('/p', '/excerpts.html');
 appGet('/a', '/excerpts.html');
 appGet('/m', '/excerpts.html');
 appGet('/data.db', '/data.db');
+// appGet('/test.php', '/test.php');
+// appGet('/thankyou', '/thankyou.html');
+
+// function subForm(){
+//         $.ajax({
+//             url:'/data',
+//             type:'post',
+//             data:$('#myForm').serialize(),
+//             success:function(){
+//                 alert("worked");
+//             }
+//         });
+//     }
+
 
 function nextInArray(arr){
     arr.pointer += 1;
