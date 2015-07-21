@@ -141,8 +141,10 @@ function getAllPages(excerpt){
 
 }
 
-getExcerptPages(longVideo, 'beethoven', 'long', 'video');
-getExcerptPages(longAudio, 'beethoven', 'long', 'audio');
+getAllPages('beethoven');
+
+// getExcerptPages(longVideo, 'beethoven', 'long', 'video');
+// getExcerptPages(longAudio, 'beethoven', 'long', 'audio');
 
 function getLinks(arrayOfLinks, index, orders){
     return orders[index].map(function(ind){
