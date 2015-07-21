@@ -165,7 +165,7 @@ appGet('/a', '/excerpts.html');
 appGet('/m', '/excerpts.html');
 appGet('/data.db', '/data.db');
 // appGet('/test.php', '/test.php');
-// appGet('/thankyou', '/thankyou.html');
+appGet('/thankyou', '/thankyou.html');
 
 // function subForm(){
 //         $.ajax({
@@ -178,6 +178,12 @@ appGet('/data.db', '/data.db');
 //         });
 //     }
 
+
+// $.ajax({
+//                 url:'/Person/Edit/@Model.Id/',
+//                 type:'post',
+//                 data:$('#myForm').serialize(),
+//             });
 
 function nextInArray(arr){
     arr.pointer += 1;

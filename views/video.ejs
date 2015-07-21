@@ -1,3 +1,8 @@
+<head>
+    <% include partials/head %>
+</head>
+
+
 <p>Imagine you are judging a competition preliminary, only the sound is broken on your computer. Your task is to judge, as best you can, the quality of the playing of each participant, without being able to hear them. Try to match as best you can the scores of the 
 other judges, who are listening to the same excerpts with sound.  </p>
 
@@ -21,7 +26,11 @@ other judges, who are listening to the same excerpts with sound.  </p>
 
 Please choose a winner
 <br>
-<form action='/data' method='post' onsubmit="if(document.getElementById('agree').checked) {alert('submission received. thank you! You can not return to the home page or exit'); return true } else { alert('Please indicate that you have are completing the form for this excerpt for the first and only time. Otherwise please close this browser window and do not complete the experiment'); return false; }">
+<form action='/thankyou' method='get' onsubmit="if(document.getElementById('agree').checked) {$.ajax({
+                url:'/data',
+                type:'post',
+                data: $('form').serialize(),
+            }); alert('Submission received!')} else { alert('Please indicate that you have are completing the form for this excerpt for the first and only time. Otherwise please close this browser window and do not complete the experiment'); return false; }">
 <input type="radio" name="winner + <%= path %>" value="1" > Pianist # 1
 <br>
 <input type="radio" name="winner + <%= path %>" value="2">Pianist # 2
@@ -52,6 +61,5 @@ Any other feedback would be greatly appreciated! <br><br>
 <input type='submit' value='Submit responses'>
 </form>
 
-<a href='/'> Click to return to the home page </a>
 
 
