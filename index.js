@@ -10,6 +10,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser);
 
+var br = require('./backReload');
 
 
 
@@ -125,7 +126,7 @@ function getExcerptPages(pagePaths, excerpt, length, audioOrVideo){
                     '/p/' + excerpt + '/' + String(page),
                     '/a/' + excerpt + '/' + String(page)];
         paths.forEach(function(path){
-            appRender(path, audioOrVideo + '.ejs', {links: links, path: path});
+            appRender(path, audioOrVideo + '.ejs', {links: links, path: path, noBack: noBack});
         });
         
     });
@@ -200,3 +201,31 @@ var port = process.env.PORT || 8080;
 serve.listen(port, function() {
     //console.log('Our app is running on http://localhost:' + port);
 });
+
+
+function noBack(){
+    if (typeof history.pushState === "function") {
+        history.pushState("jibberish", null, null);
+        window.onpopstate = function () {
+            history.pushState('newjibberish', null, null);
+            // Handle the back (or forward) buttons here
+            // Will NOT handle refresh, use onbeforeunload for this.
+        };
+    }
+    else {
+        var ignoreHashChange = true;
+        window.onhashchange = function () {
+            if (!ignoreHashChange) {
+                ignoreHashChange = true;
+                window.location.hash = Math.random();
+                // Detect and redirect change here
+                // Works in older FF and IE9
+                // * it does mess with your hash symbol (anchor?) pound sign
+                // delimiter on the end of the URL
+            }
+            else {
+                ignoreHashChange = false;   
+            }
+        };
+    }
+}
