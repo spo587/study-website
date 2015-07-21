@@ -166,7 +166,7 @@ appGet("/node_modules/socket.io/node_modules/socket.io-client/socket.io.js", "/n
 appGet('/p', '/excerpts.html');
 appGet('/a', '/excerpts.html');
 appGet('/m', '/excerpts.html');
-
+appGet('/data.db', '/data.db');
 
 function nextInArray(arr){
     arr.pointer += 1;
