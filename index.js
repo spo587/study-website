@@ -10,9 +10,6 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser);
 
-var br = require('./backReload');
-
-
 
 app.post('/data', function(req, res){
     //console.log(JSON.stringify(req.body));
