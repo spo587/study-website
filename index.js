@@ -123,7 +123,7 @@ function getExcerptPages(pagePaths, excerpt, length, audioOrVideo){
                     '/p/' + excerpt + '/' + String(page),
                     '/a/' + excerpt + '/' + String(page)];
         paths.forEach(function(path){
-            appRender(path, audioOrVideo + '.ejs', {links: links, path: path, subForm: subForm});
+            appRender(path, audioOrVideo + '.ejs', {links: links, path: path});
         });
         
     });
