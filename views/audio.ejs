@@ -1,3 +1,7 @@
+<head>
+    <% include partials/head %>
+</head>
+
 Please listen to the three excerpts below and use the form underneath to rate them and choose a winner.
 <ul>
     <% for(var i=0; i<links.length; i++) { %>
@@ -15,7 +19,11 @@ Please listen to the three excerpts below and use the form underneath to rate th
 
 Please choose a winner
 <br>
-<form action='/data' method='post' onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have are completing the form for this excerpt for the first and only time. Otherwise please close this browser window and do not complete the experiment'); return false; }">
+<form action='/thankyou' method='get' onsubmit="if(document.getElementById('agree').checked) {$.ajax({
+                url:'/data',
+                type:'post',
+                data: $('form').serialize(),
+            }); alert('Submission received!')} else { alert('Please indicate that you have are completing the form for this excerpt for the first and only time. Otherwise please close this browser window and do not complete the experiment'); return false; }">
 <input type="radio" name="winner + <%= path %>" value="1" > Pianist # 1
 <br>
 <input type="radio" name="winner + <%= path %>" value="2">Pianist # 2
