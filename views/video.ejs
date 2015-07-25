@@ -3,11 +3,10 @@
 </head>
 
 
-<p>Imagine you are judging a competition preliminary, only the sound is broken in the files you've received. Your task is to judge, as best you can, the quality of the playing of each participant, without being able to hear them. Try to match as best you can the score you think you would give, had the sound not been broken.  </p>
+<p> We are investigating how people judge musical performances, and in particular how much they rely on visual vs. aural information. </p>
 
-<p> [alternate] Imagine you are judging a competition preliminary, only the sound is broken in the files you've received. Separately, a panel of expert judges has viewed the full clips of these performances, with sound, and ranked them. Your task is to match those ratings, as best you can, with the information you have here. </p>
+<p> Please watch to the silent performance excerpts below a single time and then answer the questions below to the best of your ability, given the limited information available. Make sure you are in a quiet, calm place where you can concentrate fully on each excerpt. </p>
 
-<p> Use the form underneath to make your best judgment of the winner and rate each pianist.</p>
 
 <% console.log(links) %>
 <% console.log(path) %>
@@ -25,7 +24,7 @@
 <br><br>
 
 
-Please choose a winner
+Please indicate which of the three you believe to be the best overall performance.
 <br>
 <form action='/thankyou' method='get' onsubmit="if(document.getElementById('agree').checked) {$.ajax({
                 url:'/data',
@@ -39,23 +38,47 @@ Please choose a winner
 <input type="radio" name="winner + <%= path %>" value="3">Pianist # 3
 <br><br>
 
+A panel of expert musicians have separately viewed the entire performances (along with the sound) and ranked them. Please indicate your best guess as to whom the panel chose as the winner: <br>
+<input type="radio" name="expert-winner + <%= path %>" value="1" > Pianist # 1
+<br>
+<input type="radio" name="expert-winner + <%= path %>" value="2">Pianist # 2
+<br>
+<input type="radio" name="expert-winner + <%= path %>" value="3">Pianist # 3
+<br><br>
 
-Please rate each pianist on a scale of 1-10 (10 being the best, 1 being the worst)
+Please indicate how difficult it was for you to decide your preferred performance, 1 being not difficult at all,
+5 being moderately difficult, and 10 indicating that you chose randomly between at least two of the performances. <br>
+<% for (var i=1; i<11; i++) { %>
+    <input type='radio' name='difficulty + <%= path %>' value='<% i %>'> <%= i%>
+    <% } %> 
 <br><br>
-<% for (var j=1; j<4; j++) { %>
-    pianist #<%= j %> <br>
-    <% for (var i=1; i<11; i++) { %>
-        <input type='radio' name='rating + <%= path %> + pianist + <%= j %>' value='<%= i %>' > <%= i %>
-        
-    <% } %>
-    <br><br>
-   <% } %>
+
+Please indicate which of the three performances you believe was second best.
+<input type="radio" name="second + <%= path %>" value="1" > Pianist # 1
+<br>
+<input type="radio" name="second + <%= path %>" value="2">Pianist # 2
+<br>
+<input type="radio" name="second + <%= path %>" value="3">Pianist # 3
 <br><br>
-What do you think this was experiment is about? In addition, if you recognized any of the pianists in the above videos, please note that here, and which one(s). <br><br>
-<textarea name="textarea" style="width:250px;height:150px;"></textarea>
+
+Please indicate how difficult it was for you to decide your preferred performance, 1 being not difficult at all,
+5 being moderately difficult, and 10 indicating that you chose randomly between at least two of the performances. <br>
+<% for (var i=1; i<11; i++) { %>
+    <input type='radio' name='difficulty + <%= path %>' value='<% i %>'> <%= i%>
+    <% } %> 
 <br><br>
-Any other feedback would be greatly appreciated! <br><br>
-<textarea name="textarea2" style="width:250px;height:150px;"></textarea>
+
+Did you recognize the music being played in the excerpts? If so, please indicate below what it was:<br>
+
+<textarea name="textarea" style="width:500px;height:50px;"></textarea>
+<br><br>
+
+
+We told you a little about what this experiment is about. Do you have any further ideas about what we're investigating? In addition, if you recognized any of the pianists in the above videos, please note that here, and which one(s). <br><br>
+<textarea name="textarea" style="width:500px;height:50px;"></textarea>
+<br><br>
+Any other feedback or comments? <br><br>
+<textarea name="textarea2" style="width:5000px;height:50px;"></textarea>
 <br><br>
 <input type="checkbox" name="checkbox" value="check" id="agree" /> I have completed the experiment faithfully, and this is the first time I am completing the experiment for this excerpt <br>
 
