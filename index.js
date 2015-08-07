@@ -129,8 +129,8 @@ function getExcerptPages(pagePaths, excerpt, length, audioOrVideo){
                     '/a/' + excerpt + '/' + String(page)];
         paths.forEach(function(path){
             var nextPath = path + '/part2';
-            appRender(path, audioOrVideo + '.ejs', {links: links, path: path, nextPath: nextPath});
-            appRender(nextPath, secondAudioVideo + '.ejs', {links: secondLinks, path: nextPath, nextPath: '/thankyou'})
+            appRender(path, audioOrVideo + 'First' + '.ejs', {links: links, path: path, nextPath: nextPath});
+            appRender(nextPath, secondAudioVideo + 'Second' + '.ejs', {links: secondLinks, path: nextPath, nextPath: '/thankyou'})
         });
         
     });

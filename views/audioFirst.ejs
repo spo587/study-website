@@ -1,0 +1,86 @@
+<head>
+    <% include partials/head %>
+</head>
+
+<p> We are investigating how people judge musical performances, and in particular how much they rely on visual vs. aural information. </p>
+
+<p> In this experiment you will first judge performances by three separate pianists in audio recordings. Then you will judge three more pianists playing the same piece in silent videos. Please watch/listen to each excerpt a single time and then answer the questions to the best of your ability, given the limited information available. </p>
+
+
+<ul>
+    <% for(var i=0; i<links.length; i++) { %>
+        <li>
+            <iframe width='890' height='500' src='<%= links[i] %>' frameborder='0'>
+                
+            </iframe>
+        </li>
+    <% } %>
+</ul>
+
+
+<br><br>
+
+
+Please indicate which of the three you believe to be the best overall performance, based on the excerpt you've seen.
+<br>
+<form action='<%= nextPath %>' method='get' onsubmit="if(document.getElementById('agree').checked) {$.ajax({
+                url:'/data',
+                type:'post',
+                data: $('form').serialize(),
+            }); alert('Submission received!')} else { alert('Please indicate that you have are completing the form for this excerpt for the first and only time. Otherwise please close this browser window and do not complete the experiment'); return false; }">
+<input type="radio" name="winner + <%= path %>" value="1" > Pianist # 1
+<br>
+<input type="radio" name="winner + <%= path %>" value="2">Pianist # 2
+<br>
+<input type="radio" name="winner + <%= path %>" value="3">Pianist # 3
+<br><br>
+
+A panel of expert musicians have separately viewed the entire performances (along with the sound) and ranked them. Please indicate your best guess as to whom the panel chose as the winner: <br>
+<input type="radio" name="expert-winner + <%= path %>" value="1" > Pianist # 1
+<br>
+<input type="radio" name="expert-winner + <%= path %>" value="2">Pianist # 2
+<br>
+<input type="radio" name="expert-winner + <%= path %>" value="3">Pianist # 3
+<br><br>
+
+Please indicate how difficult it was for you to decide your preferred performance, 1 being not difficult at all,
+5 being moderately difficult, and 10 indicating that you chose randomly between at least two of the performances. <br>
+<% for (var i=1; i<11; i++) { %>
+    <input type='radio' name='difficulty + <%= path %>' value='<% i %>'> <%= i%>
+    <% } %> 
+<br><br>
+
+Please indicate which of the three performances you believe was second best.
+<input type="radio" name="second + <%= path %>" value="1" > Pianist # 1
+<br>
+<input type="radio" name="second + <%= path %>" value="2">Pianist # 2
+<br>
+<input type="radio" name="second + <%= path %>" value="3">Pianist # 3
+<br><br>
+
+Please indicate how difficult it was for you to decide your preferred performance, 1 being not difficult at all,
+5 being moderately difficult, and 10 indicating that you chose randomly between at least two of the performances. <br>
+<% for (var i=1; i<11; i++) { %>
+    <input type='radio' name='difficulty + <%= path %>' value='<% i %>'> <%= i%>
+    <% } %> 
+<br><br>
+
+Did you recognize the music being played in the excerpts, or any of the pianists? If so, please say what section of what piece it was, or which pianist(s) you recognize:<br>
+
+<textarea name="textarea" style="width:500px;height:50px;"></textarea>
+<br><br>
+
+
+We told you a little about what this experiment is about. Do you have any further ideas about what we're investigating? <br><br>
+<textarea name="textarea" style="width:500px;height:50px;"></textarea>
+<br><br>
+Any other feedback or comments? <br><br>
+<textarea name="textarea2" style="width:500px;height:50px;"></textarea>
+<br><br>
+<input type="checkbox" name="checkbox" value="check" id="agree" /> I have completed the experiment faithfully, and this is the first time I am completing the experiment for this excerpt <br>
+
+<input type='submit' value='Submit responses'>
+</form>
+
+
+
