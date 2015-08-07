@@ -117,27 +117,25 @@ function shuffleArray(array) {
 
 
 function getExcerptPages(pagePaths, excerpt, length, audioOrVideo){
+    //console.log(pagePaths);
+    var secondAudioVideo = audioOrVideo === 'audio' ? 'video' : 'audio';
     pagePaths.forEach(function(page, index){
         var orders = [[0,1,2], [1,2,0], [2,1,0], [2,0,1], [0,2,1], [1,0,2]];
+        var secondPageOrders = [[1,2,0], [2,0,1], [1,0,2], [0,1,2], [2,1,0], [0,2,1]];
         var links = getLinks(excerpts[excerptPointers[excerpt]][audioOrVideo][length].links, index, orders);
-        //console.log(links);
+        var secondLinks = getLinks(excerpts[excerptPointers[excerpt]][secondAudioVideo][length].links, index, secondPageOrders);
         var paths = ['/m/' + excerpt + '/' + String(page), 
                     '/p/' + excerpt + '/' + String(page),
                     '/a/' + excerpt + '/' + String(page)];
         paths.forEach(function(path){
-            // var pathNum = Number(path[path.length - 1]);
-            // var nextPathNum = getComplementPairNum(pathNum);
-            // var nextPath = path.slice(0, path.length - 1) + nextPathNum;
-            appRender(path, audioOrVideo + '.ejs', {links: links, path: path}); //, nextPath: nextPath});
+            var nextPath = path + '/part2';
+            appRender(path, audioOrVideo + '.ejs', {links: links, path: path, nextPath: nextPath});
+            appRender(nextPath, secondAudioVideo + '.ejs', {links: secondLinks, path: nextPath, nextPath: '/thankyou'})
         });
         
     });
     
 }
-
-// function getComplementPairNum(pathNumber){
-
-// }
 
 function getAllPages(excerpt){
     getExcerptPages(longVideo, excerpt, 'long', 'video');
@@ -159,12 +157,12 @@ function getLinks(arrayOfLinks, index, orders){
     });
 }
 
-function generateOrder(arrayOfLinks){
-    var order = randomFromArrayAndDelete(orders);
-    return {links: 
-            [arrayOfLinks[order[0]], arrayOfLinks[order[1]], arrayOfLinks[order[2]]]
-            }
-}
+// function generateOrder(arrayOfLinks){
+//     var order = randomFromArrayAndDelete(orders);
+//     return {links: 
+//             [arrayOfLinks[order[0]], arrayOfLinks[order[1]], arrayOfLinks[order[2]]]
+//             }
+// }
 
 appGet('/test.html', '/test.html')
 appGet('/', '/home.html');

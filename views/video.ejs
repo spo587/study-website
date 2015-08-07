@@ -23,7 +23,7 @@
 
 Please indicate which of the three you believe to be the best overall performance, based on the excerpt you've seen.
 <br>
-<form action='/thankyou' method='get' onsubmit="if(document.getElementById('agree').checked) {$.ajax({
+<form action='<%= nextPath %>' method='get' onsubmit="if(document.getElementById('agree').checked) {$.ajax({
                 url:'/data',
                 type:'post',
                 data: $('form').serialize(),
