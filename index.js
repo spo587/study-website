@@ -43,6 +43,8 @@ var excerpts = require('./excerpts')
 
 var nedb = require('nedb');
 
+var excerptPointers = {beethoven: 'beethovenLinks', bach: 'bachLinks'};
+
 var excerptNames = ['beethoven', 'bach'];
 
 var sockets = [];
@@ -117,18 +119,25 @@ function shuffleArray(array) {
 function getExcerptPages(pagePaths, excerpt, length, audioOrVideo){
     pagePaths.forEach(function(page, index){
         var orders = [[0,1,2], [1,2,0], [2,1,0], [2,0,1], [0,2,1], [1,0,2]];
-        var links = getLinks(excerpts.beethovenLinks[audioOrVideo][length].links, index, orders);
+        var links = getLinks(excerpts[excerptPointers[excerpt]][audioOrVideo][length].links, index, orders);
         //console.log(links);
         var paths = ['/m/' + excerpt + '/' + String(page), 
                     '/p/' + excerpt + '/' + String(page),
                     '/a/' + excerpt + '/' + String(page)];
         paths.forEach(function(path){
-            appRender(path, audioOrVideo + '.ejs', {links: links, path: path});
+            // var pathNum = Number(path[path.length - 1]);
+            // var nextPathNum = getComplementPairNum(pathNum);
+            // var nextPath = path.slice(0, path.length - 1) + nextPathNum;
+            appRender(path, audioOrVideo + '.ejs', {links: links, path: path}); //, nextPath: nextPath});
         });
         
     });
     
 }
+
+// function getComplementPairNum(pathNumber){
+
+// }
 
 function getAllPages(excerpt){
     getExcerptPages(longVideo, excerpt, 'long', 'video');
@@ -139,6 +148,7 @@ function getAllPages(excerpt){
 }
 
 getAllPages('beethoven');
+getAllPages('bach');
 
 // getExcerptPages(longVideo, 'beethoven', 'long', 'video');
 // getExcerptPages(longAudio, 'beethoven', 'long', 'audio');

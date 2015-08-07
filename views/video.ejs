@@ -2,14 +2,11 @@
     <% include partials/head %>
 </head>
 
-
 <p> We are investigating how people judge musical performances, and in particular how much they rely on visual vs. aural information. </p>
 
 <p> Please watch to the silent performance excerpts below a single time and then answer the questions below to the best of your ability, given the limited information available. Make sure you are in a quiet, calm place where you can concentrate fully on each excerpt. </p>
 
 
-<% console.log(links) %>
-<% console.log(path) %>
 <ul>
     <% for(var i=0; i<links.length; i++) { %>
         <li>
@@ -24,7 +21,7 @@
 <br><br>
 
 
-Please indicate which of the three you believe to be the best overall performance.
+Please indicate which of the three you believe to be the best overall performance, based on the excerpt you've seen.
 <br>
 <form action='/thankyou' method='get' onsubmit="if(document.getElementById('agree').checked) {$.ajax({
                 url:'/data',
@@ -68,17 +65,17 @@ Please indicate how difficult it was for you to decide your preferred performanc
     <% } %> 
 <br><br>
 
-Did you recognize the music being played in the excerpts? If so, please indicate below what it was:<br>
+Did you recognize the music being played in the excerpts, or any of the pianists? If so, please say what section of what piece it was, or which pianist(s) you recognize:<br>
 
 <textarea name="textarea" style="width:500px;height:50px;"></textarea>
 <br><br>
 
 
-We told you a little about what this experiment is about. Do you have any further ideas about what we're investigating? In addition, if you recognized any of the pianists in the above videos, please note that here, and which one(s). <br><br>
+We told you a little about what this experiment is about. Do you have any further ideas about what we're investigating? <br><br>
 <textarea name="textarea" style="width:500px;height:50px;"></textarea>
 <br><br>
 Any other feedback or comments? <br><br>
-<textarea name="textarea2" style="width:5000px;height:50px;"></textarea>
+<textarea name="textarea2" style="width:500px;height:50px;"></textarea>
 <br><br>
 <input type="checkbox" name="checkbox" value="check" id="agree" /> I have completed the experiment faithfully, and this is the first time I am completing the experiment for this excerpt <br>
 

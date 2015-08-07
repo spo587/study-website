@@ -10,7 +10,7 @@
     <% for(var i=0; i<links.length; i++) { %>
         <li>
             <audio controls>
-            <source src="<%= links[i] %>"" type="audio/mpeg">
+            <source src="<%= links[i] %>"" type="audio/wav">
                 
             </audio>
         </li>
@@ -20,7 +20,7 @@
 <br><br>
 
 
-Please indicate which of the three you believe to be the best overall performance.
+Please indicate which of the three you believe to be the best overall performance, based on the excerpt you've heard.
 <br>
 <form action='/thankyou' method='get' onsubmit="if(document.getElementById('agree').checked) {$.ajax({
                 url:'/data',
@@ -50,13 +50,13 @@ Please indicate how difficult it was for you to decide which was the best perfor
 <br><br>
 
 
-Did you recognize the music being played in the excerpts? If so, please say what section of what piece it was:<br>
+Did you recognize the music being played in the excerpts, or any of the pianists? If so, please say what section of what piece it was, or which pianist(s) you recognize:<br>
 
-<textarea name="textarea" style="width:5000px;height:150px;"></textarea>
+<textarea name="textarea" style="width:500px;height:150px;"></textarea>
 <br><br>
 
 
-We told you a little about what this experiment is about. Do you have any further ideas about what we're investigating? In addition, if you recognized any of the pianists in the above videos, please note that here, and which one(s). <br><br>
+We told you a little about what this experiment is about. Do you have any further ideas about what we're investigating? <br><br>
 <textarea name="textarea" style="width:500px;height:150px;"></textarea>
 <br><br>
 Any other feedback or comments? <br><br>
