@@ -37,14 +37,14 @@ var excerpts = {
                             long: 
                                 {links:
                                     ['https://www.youtube.com/embed/zFOLvdV_cHs', 
-                                    'https://www.youtube.com/embed/usY2i1iGwHw', 
-                                    'https://www.youtube.com/embed/Xh48YUGqh7E']
+                                    'https://www.youtube.com/embed/ANY8ViA7-m8', 
+                                    'http://www.youtube.com/embed/_--dJ9Y9O1Y']
                                 },
                             short:
                                 {links:
-                                    ['https://www.youtube.com/embed/ZS7ZmkReOpQ',
+                                    ['http://www.youtube.com/embed/t6nJgNBJiwU',
                                      'https://www.youtube.com/embed/cUjNvYqdlYs', 
-                                     'https://www.youtube.com/embed/2TotViRQ37I']}
+                                     'http://www.youtube.com/embed/7MRm0x0ns4Y']}
                             },
                         audio: {
                             long:
