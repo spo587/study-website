@@ -1,38 +1,38 @@
 var excerpts = {
-                    beethovenLinks:
+                    beethoven1:
 
-                        {name: 'beethoven',
+                        {name: 'beethoven1',
                         video: {
                             long: 
                                 {links:
-                                    ['https://www.youtube.com/embed/kjVJcB92QyM', 
-                                    'http://www.youtube.com/embed/wiak0e-xGno', 
-                                    'http://www.youtube.com/embed/bDfM3xcL2wM']
+                                    ['http://www.youtube.com/embed/Ogsae5jJ5G0', 
+                                    'http://www.youtube.com/embed/DhESH3b6DsE', 
+                                    'http://www.youtube.com/embed/2iqRONCTMCo']
                                 },
                             short:
                                 {links:
-                                    ['http://www.youtube.com/embed/ZFKmr05krdM',
-                                     'http://www.youtube.com/embed/q0lLP36s82Q', 
-                                     'http://www.youtube.com/embed/mTi28tqLwQ4']}
+                                    ['http://www.youtube.com/embed/6aVMzBdWU98',
+                                     'http://www.youtube.com/embed/9XsaFJ6PZI8', 
+                                     'http://www.youtube.com/embed/OWVlcvW9560']}
                             },
                         audio: {
                             long:
                                 {links:
-                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/sound_long/vdb_long.wav', 
-                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/sound_long/lanyi_long.wav', 
-                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/sound_long/unnamed_long.wav']
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-110/60-s/unnamed-60-s.wav', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-110/60-s/choe-60-s.wav', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-110/60-s/kitskopolous-60-s.wav']
                                 },
                             short:
                                 {links:
-                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/sound_short/vdb_short.wav',
-                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/sound_short/lanyi_short.wav',
-                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/sound_short/unnamed_short.wav']
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-110/6-s/unnamed-6-s.wav',
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-110/6-s/choe-6-s.wav',
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-110/6-s/kitskopolous-6-s.wav']
                                 }
                             
                         }
                     },
-                    bachLinks:
-                        {name: 'bach',
+                    bach1:
+                        {name: 'bach1',
                         video: {
                             long: 
                                 {links:
@@ -49,19 +49,51 @@ var excerpts = {
                         audio: {
                             long:
                                 {links:
-                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/sound-long/lessner-long.wav', 
-                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/sound-long/koroliov-long.wav', 
-                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/sound-long/ishizaka-long.wav']
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/60-s/koroliov-60-s.wav', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/60-s/lessner-60-s.wav', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/60-s/ishizaka-60-s.wav']
                                 },
                             short:
                                 {links:
-                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/sound-short/lessner-short.wav',
-                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/sound-short/koroliov-short.wav',
-                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/sound-short/ishizaka-short.wav']
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/6-s/koroliov-6-s.wav',
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/6-s/lessner-6-s.wav',
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/6-s/ishizaka-6-s.wav']
+                                }
+                            
+                        }
+                    },
+                    beethoven2:
+                        {name: 'beethoven2',
+                        video: {
+                            long: 
+                                {links:
+                                    ['http://www.youtube.com/embed/MqSqRWIaB4I', 
+                                    'http://www.youtube.com/embed/-aArpzjMXUU', 
+                                    'https://www.youtube.com/embed/Xh48YUGqh7E']
+                                },
+                            short:
+                                {links:
+                                    ['http://www.youtube.com/embed/zr2GYvFptDM',
+                                     'http://www.youtube.com/embed/S-JgJGrLzwE', 
+                                     'http://www.youtube.com/embed/FSyg9saeUDU']}
+                            },
+                        audio: {
+                            long:
+                                {links:
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-109/60-s/rose-60-s.wav', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-109/60-s/marie-rosa-60-s.wav', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-109/60-s/joan-60-s.wav']
+                                },
+                            short:
+                                {links:
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-109/6-s/rose-6-s.wav',
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-109/6-s/marie-rosa-6-s.wav',
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-109/6-s/joan-6-s.wav']
                                 }
                             
                         }
                     }
+
                 };
 
 
