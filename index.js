@@ -45,7 +45,7 @@ var nedb = require('nedb');
 
 //var excerptPointers = {beethovenOne: 'beethovenOneLinks', bachOne: 'bachOneLinks'};
 
-var excerptNames = ['beethoven1', 'bach1', 'beethoven2', 'bach2'];
+var excerptNames = ['excerpt1', 'excerpt2', 'excerpt3', 'excerpt5', 'excerpt6'];
 
 var sockets = [];
 
