@@ -43,9 +43,9 @@ var excerpts = require('./excerpts')
 
 var nedb = require('nedb');
 
-var excerptPointers = {beethoven: 'beethovenLinks', bach: 'bachLinks'};
+//var excerptPointers = {beethovenOne: 'beethovenOneLinks', bachOne: 'bachOneLinks'};
 
-var excerptNames = ['beethoven', 'bach'];
+var excerptNames = ['beethoven1', 'bach1', 'beethoven2'];
 
 var sockets = [];
 
@@ -122,8 +122,9 @@ function getExcerptPages(pagePaths, excerpt, length, audioOrVideo){
     pagePaths.forEach(function(page, index){
         var orders = [[0,1,2], [1,2,0], [2,1,0], [2,0,1], [0,2,1], [1,0,2]];
         var secondPageOrders = [[1,2,0], [2,0,1], [1,0,2], [0,1,2], [2,1,0], [0,2,1]];
-        var links = getLinks(excerpts[excerptPointers[excerpt]][audioOrVideo][length].links, index, orders);
-        var secondLinks = getLinks(excerpts[excerptPointers[excerpt]][secondAudioVideo][length].links, index, secondPageOrders);
+        //console.log(excerpts[excerptPointers[excerpt]]);
+        var links = getLinks(excerpts[excerpt][audioOrVideo][length].links, index, orders);
+        var secondLinks = getLinks(excerpts[excerpt][secondAudioVideo][length].links, index, secondPageOrders);
         var paths = ['/m/' + excerpt + '/' + String(page), 
                     '/p/' + excerpt + '/' + String(page),
                     '/a/' + excerpt + '/' + String(page)];
@@ -145,8 +146,9 @@ function getAllPages(excerpt){
 
 }
 
-getAllPages('beethoven');
-getAllPages('bach');
+getAllPages('beethoven1');
+getAllPages('bach1');
+getAllPages('beethoven2')
 
 // getExcerptPages(longVideo, 'beethoven', 'long', 'video');
 // getExcerptPages(longAudio, 'beethoven', 'long', 'audio');
