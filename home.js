@@ -1,15 +1,15 @@
 function setLink(url){
-    if (checkFirstVisit()){
-        var link = document.createElement('a');
-        link.href = window.location.pathname + '/' + url;
-        link.text = 'click here';
-        document.body.appendChild(link);
-    }
-    else {
-        console.log('not first visit, not setting link');
-        alert('looks like youve visited this page already, so you cant do the experiment again!');
+    //if (checkFirstVisit()){
+    var link = document.createElement('a');
+    link.href = window.location.pathname + '/' + url;
+    link.text = 'click here';
+    document.body.appendChild(link);
+    //}
+    // else {
+    //     console.log('not first visit, not setting link');
+    //     alert('looks like youve visited this page already, so you cant do the experiment again!');
 
-    }
+    // }
 }
 
 var thisPage = window.location.pathname;
