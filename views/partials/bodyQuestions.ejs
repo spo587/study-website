@@ -1,0 +1,51 @@
+<br>
+<form action='<%= nextPath %>' method='get' onsubmit="if(document.getElementById('agree').checked && $('div:not(:has(:radio:checked))').length === 0) {$.ajax({
+                url:'/data',
+                type:'post',
+                data: $('form').serialize(),
+            }); alert('Submission received!')} else { alert('Please indicate that you have completed this portion of the experiment faithfully and are ready to submit, and make sure youve made a selection for each required question'); return false; }">
+<div>
+<input type="radio" name="winner + <%= path %>" value="1" > Pianist # 1
+<br>
+<input type="radio" name="winner + <%= path %>" value="2">Pianist # 2
+<br>
+<input type="radio" name="winner + <%= path %>" value="3">Pianist # 3
+<br><br>
+</div>
+
+<div>
+Please indicate how difficult it was for you to decide your preferred performance, 1 being not difficult at all,
+5 being moderately difficult, and 10 indicating that you chose randomly between at least two of the performances. <br>
+<% for (var i=1; i<11; i++) { %>
+    <input type='radio' name='difficulty + <%= path %>' value='<% i %>'> <%= i%>
+    <% } %> 
+<br><br>
+</div>
+
+<div>
+Please indicate which of the three performances you believe was second best.
+<input type="radio" name="second + <%= path %>" value="1" > Pianist # 1
+<br>
+<input type="radio" name="second + <%= path %>" value="2">Pianist # 2
+<br>
+<input type="radio" name="second + <%= path %>" value="3">Pianist # 3
+<br><br>
+</div>
+
+<div>
+Please indicate how difficult it was for you to decide your second preferred performance, 1 being not difficult at all,
+5 being moderately difficult, and 10 indicating that you chose randomly between at least two of the performances. <br>
+<% for (var i=1; i<11; i++) { %>
+    <input type='radio' name='difficulty2 + <%= path %>' value='<% i %>'> <%= i%>
+    <% } %> 
+<br><br>
+</div>
+
+If you would like to share any information about what factors, musical, pianistic or otherwise, influenced your decision, please do so here (optional): <br>
+<textarea name="textarea" style="width:500px;height:50px;"></textarea>
+<br><br>
+
+Did you recognize the music being played in the excerpts, or any of the pianists? If so, please say what section of what piece it was, or which pianist(s) you recognize:<br>
+
+<textarea name="textarea" style="width:500px;height:50px;"></textarea>
+<br><br>
