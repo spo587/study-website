@@ -45,7 +45,7 @@ var nedb = require('nedb');
 
 //var excerptPointers = {beethovenOne: 'beethovenOneLinks', bachOne: 'bachOneLinks'};
 
-var excerptNames = ['beethoven1', 'bach1', 'beethoven2'];
+var excerptNames = ['beethoven1', 'bach1', 'beethoven2', 'bach2'];
 
 var sockets = [];
 
@@ -146,9 +146,10 @@ function getAllPages(excerpt){
 
 }
 
-getAllPages('beethoven1');
-getAllPages('bach1');
-getAllPages('beethoven2')
+excerptNames.forEach(function(excerptName){
+    getAllPages(excerptName);
+});
+
 
 // getExcerptPages(longVideo, 'beethoven', 'long', 'video');
 // getExcerptPages(longAudio, 'beethoven', 'long', 'audio');
