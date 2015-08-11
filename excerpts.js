@@ -69,13 +69,13 @@ var excerpts = {
                                 {links:
                                     ['http://www.youtube.com/embed/MqSqRWIaB4I', 
                                     'http://www.youtube.com/embed/-aArpzjMXUU', 
-                                    'https://www.youtube.com/embed/Xh48YUGqh7E']
+                                    'https://www.youtube.com/embed/FSyg9saeUDU']
                                 },
                             short:
                                 {links:
                                     ['http://www.youtube.com/embed/zr2GYvFptDM',
                                      'http://www.youtube.com/embed/S-JgJGrLzwE', 
-                                     'http://www.youtube.com/embed/FSyg9saeUDU']}
+                                     'https://www.youtube.com/embed/Y0RojENCLwE']}
                             },
                         audio: {
                             long:
