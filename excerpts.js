@@ -104,7 +104,7 @@ var excerpts = {
                                 },
                             short:
                                 {links:
-                                    ['http://www.youtube.com/embed/t6nJgNBJiwU',
+                                    ['http://www.youtube.com/embed/Kibisoe9dAg',
                                      'https://www.youtube.com/embed/cUjNvYqdlYs', 
                                      'http://www.youtube.com/embed/7MRm0x0ns4Y']}
                             },
@@ -130,7 +130,7 @@ var excerpts = {
                             long: 
                                 {links:
                                     ['https://www.youtube.com/embed/pKyn159CDqA', 
-                                    'http://www.youtube.com/embed/-aArpzjMXUU', 
+                                    'https://www.youtube.com/embed/98CauON9fSc', 
                                     'https://www.youtube.com/embed/Qh5R45WrKQs']
                                 },
                             short:
