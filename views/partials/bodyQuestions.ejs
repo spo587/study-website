@@ -1,5 +1,5 @@
 <br>
-<form action='<%= nextPath %>' method='get' onsubmit="if(document.getElementById('agree').checked && $('div:not(:has(:radio:checked))').length === 0) {$.ajax({
+<form action='<%= nextPath %>' method='get' onsubmit="if(document.getElementById('agree').checked) {$.ajax({
                 url:'/data',
                 type:'post',
                 data: $('form').serialize(),
