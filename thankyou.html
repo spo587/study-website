@@ -1,4 +1,12 @@
 <!Doctype html>
+
 <body>
-    Thank you for participating! <a href='/'> Return to home page to complete the experiment for another excerpt. </a>
+    Thank you for participating! <br><br>
 </body>
+<script>
+var path = location.pathname.slice(0,2);
+var link = document.createElement('a');
+link.href = path
+link.text = 'Click here to complete the experiment for another excerpt.'
+document.body.appendChild(link);
+</script>

@@ -129,9 +129,10 @@ function getExcerptPages(pagePaths, excerpt, length, audioOrVideo){
                     '/p/' + excerpt + '/' + String(page),
                     '/a/' + excerpt + '/' + String(page)];
         paths.forEach(function(path){
+            var root = path.slice(0,2);
             var nextPath = path + '/part2';
             appRender(path, audioOrVideo + 'First' + '.ejs', {links: links, path: path, nextPath: nextPath});
-            appRender(nextPath, secondAudioVideo + 'Second' + '.ejs', {links: secondLinks, path: nextPath, nextPath: '/thankyou'})
+            appRender(nextPath, secondAudioVideo + 'Second' + '.ejs', {links: secondLinks, path: nextPath, nextPath: root + '/thankyou'})
         });
         
     });
@@ -176,7 +177,10 @@ appGet('/a', '/excerpts.html');
 appGet('/m', '/excerpts.html');
 appGet('/data.db', '/data.db');
 // appGet('/test.php', '/test.php');
-appGet('/thankyou', '/thankyou.html');
+appGet('/a/thankyou', '/thankyou.html');
+appGet('/m/thankyou', '/thankyou.html');
+appGet('/p/thankyou', '/thankyou.html');
+
 
 // function subForm(){
 //         $.ajax({
