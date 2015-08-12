@@ -5,12 +5,13 @@
 <p> First, you will judge these performances of the same excerpt by three pianists in silent videos. Then you will judge three more pianists playing the same excerpt in audio recordings. Please watch/listen to each excerpt a single time and then answer the questions below to the best of your ability, given the limited information available. </p>
 
 
-<ul>
+<ul>    
     <% for(var i=0; i<links.length; i++) { %>
         <li>
-            <iframe width='890' height='500' src='<%= links[i] %>' frameborder='0'>
-                
-            </iframe>
+            <video width="890" height="500" controls>
+                <source src="<%= links[i] %>" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </li>
     <% } %>
 </ul>

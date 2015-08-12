@@ -129,15 +129,15 @@ var excerpts = {
                         video: {
                             long: 
                                 {links:
-                                    ['http://www.youtube.com/embed/2BVRFGd5hk0', 
-                                    'http://www.youtube.com/embed/H_934Nk5Dc8', 
-                                    'http://www.youtube.com/embed/efojNOfIiCY']
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/chopin-4th/video-silent/60-s/tsuchida-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/chopin-4th/video-silent/60-s/houston-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/chopin-4th/video-silent/60-s/wright-60-s.m4v']
                                 },
                             short:
                                 {links:
-                                    ['http://www.youtube.com/embed/cq1qn16a0jk',
-                                     'http://www.youtube.com/embed/cv1Ds-8S6S4', 
-                                     'http://www.youtube.com/embed/SIlYzGVKbT0']}
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/chopin-4th/video-silent/6-s/tsuchida-6-s.m4v',
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/chopin-4th/video-silent/6-s/houston-6-s.m4v', 
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/chopin-4th/video-silent/6-s/wright-6-s.m4v']}
                             },
                         audio: {
                             long:
