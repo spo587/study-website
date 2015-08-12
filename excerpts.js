@@ -5,15 +5,15 @@ var excerpts = {
                         video: {
                             long: 
                                 {links:
-                                    ['http://www.youtube.com/embed/Ogsae5jJ5G0', 
-                                    'http://www.youtube.com/embed/DhESH3b6DsE', 
-                                    'http://www.youtube.com/embed/2iqRONCTMCo']
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-110/video-silent/60-s/unnamed-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-110/video-silent/60-s/choe-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-110/video-silent/60-s/kitsikopolous-60-s.m4v']
                                 },
                             short:
                                 {links:
-                                    ['http://www.youtube.com/embed/6aVMzBdWU98',
-                                     'http://www.youtube.com/embed/9XsaFJ6PZI8', 
-                                     'http://www.youtube.com/embed/OWVlcvW9560']}
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-110/video-silent/6-s/unnamed-6-s.m4v',
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-110/video-silent/6-s/choe-6-s.m4v', 
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-110/video-silent/6-s/kitsikopolous-6-s.m4v']}
                             },
                         audio: {
                             long:
@@ -36,15 +36,15 @@ var excerpts = {
                         video: {
                             long: 
                                 {links:
-                                    ['http://www.youtube.com/embed/MqSqRWIaB4I', 
-                                    'http://www.youtube.com/embed/-aArpzjMXUU', 
-                                    'https://www.youtube.com/embed/FSyg9saeUDU']
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-109/video-silent/60-s/rose-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-109/video-silent/60-s/marie-rosa-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-109/video-silent/60-s/joan-60-s.m4v']
                                 },
                             short:
                                 {links:
-                                    ['http://www.youtube.com/embed/zr2GYvFptDM',
-                                     'http://www.youtube.com/embed/S-JgJGrLzwE', 
-                                     'https://www.youtube.com/embed/Y0RojENCLwE']}
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-109/video-silent/6-s/rose-6-s.m4v',
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-109/video-silent/6-s/marie-rosa-6-s.m4v', 
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/beethoven-109/video-silent/6-s/joan-6-s.m4v']}
                             },
                         audio: {
                             long:
@@ -67,15 +67,15 @@ var excerpts = {
                         video: {
                             long: 
                                 {links:
-                                    ['http://www.youtube.com/embed/wg7OEyy_WQc', 
-                                    'https://www.youtube.com/embed/ANY8ViA7-m8', 
-                                    'http://www.youtube.com/embed/_--dJ9Y9O1Y']
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/video-silent/60-s/koroliov-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/video-silent/60-s/lessner-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/video-silent/60-s/ishizaka-60-s.m4v']
                                 },
                             short:
                                 {links:
-                                    ['http://www.youtube.com/embed/Kibisoe9dAg',
-                                     'https://www.youtube.com/embed/cUjNvYqdlYs', 
-                                     'http://www.youtube.com/embed/7MRm0x0ns4Y']}
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/video-silent/6-s/koroliov-6-s.m4v',
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/video-silent/6-s/lessner-6-s.m4v', 
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-var-1/video-silent/6-s/ishizaka-6-s.m4v']}
                             },
                         audio: {
                             long:
@@ -98,15 +98,15 @@ var excerpts = {
                         video: {
                             long: 
                                 {links:
-                                    ['https://www.youtube.com/embed/pKyn159CDqA', 
-                                    'https://www.youtube.com/embed/98CauON9fSc', 
-                                    'https://www.youtube.com/embed/Qh5R45WrKQs']
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/bach-2/video-silent/60-s/breen-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/bach-2/video-silent/60-s/gryaznov-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/bach-2/video-silent/60-s/choi-60-s.m4v']
                                 },
                             short:
                                 {links:
-                                    ['https://www.youtube.com/embed/bEY6wlgHvjk',
-                                     'https://www.youtube.com/embed/YxINi7EhQKo', 
-                                     'https://www.youtube.com/embed/ei7cGWeC7-w']}
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/bach-2/video-silent/6-s/breen-6-s.m4v',
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/bach-2/video-silent/6-s/gryaznov-6-s.m4v', 
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/bach-2/video-silent/6-s/choi-6-s.m4v']}
                             },
                         audio: {
                             long:
@@ -160,15 +160,15 @@ var excerpts = {
                         video: {
                             long: 
                                 {links:
-                                    ['http://www.youtube.com/embed/lRpu-eajGYo', 
-                                    'http://www.youtube.com/embed/ZDCpiUX9hgg', 
-                                    'https://www.youtube.com/embed/5HVZSOw9tAQ']
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/mozart/video-silent/60-s/yang-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/mozart/video-silent/60-s/tito-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/mozart/video-silent/60-s/brevard-60-s.m4v']
                                 },
                             short:
                                 {links:
-                                    ['http://www.youtube.com/embed/8EjHqU83q44',
-                                     'http://www.youtube.com/embed/MhOrSnypc4I', 
-                                     'http://www.youtube.com/embed/8_9W514v2xw']}
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/mozart/video-silent/6-s/yang-6-s.m4v',
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/mozart/video-silent/6-s/tito-6-s.m4v', 
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/mozart/video-silent/6-s/brevard-6-s.m4v']}
                             },
                         audio: {
                             long:
@@ -191,15 +191,15 @@ var excerpts = {
                         video: {
                             long: 
                                 {links:
-                                    ['https://www.youtube.com/embed/cJxF_I70l74', 
-                                    'http://www.youtube.com/embed/aBhN7wfbygk', 
-                                    'http://www.youtube.com/embed/KtE0VAP__Sw']
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/schubert/video-silent/70-s/naumoff-70-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/schubert/video-silent/70-s/dutch-70-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/schubert/video-silent/70-s/harada-70-s.m4v']
                                 },
                             short:
                                 {links:
-                                    ['http://www.youtube.com/embed/XP7UxKIocw4',
-                                     'https://www.youtube.com/embed/ISiO7g6Mec4', 
-                                     'http://www.youtube.com/embed/cVNCNdyGThU']}
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/schubert/video-silent/6-s/naumoff-6-s.m4v',
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/schubert/video-silent/6-s/dutch-6-s.m4v', 
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/schubert/video-silent/6-s/harada-6-s.m4v']}
                             },
                         audio: {
                             long:
@@ -222,15 +222,15 @@ var excerpts = {
                         video: {
                             long: 
                                 {links:
-                                    ['http://www.youtube.com/embed/RlU04jjM1bM', 
-                                    'http://www.youtube.com/embed/i8rjKYPTXhU', 
-                                    'http://www.youtube.com/embed/yBkOiCZe_nY']
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-aria/video-silent/60-s/vanbloss-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-aria/video-silent/60-s/koroliov-60-s.m4v', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-aria/video-silent/60-s/angelich-60-s.m4v']
                                 },
                             short:
                                 {links:
-                                    ['http://www.youtube.com/embed/6CBXRyIozv4',
-                                     'http://www.youtube.com/embed/nwhbIE88GKU', 
-                                     'http://www.youtube.com/embed/n60yyNvr0uA']}
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-aria/video-silent/6-s/vanbloss-6-s.m4v',
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-aria/video-silent/6-s/koroliov-6-s.m4v', 
+                                     'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-aria/video-silent/6-s/angelich-6-s.m4v']}
                             },
                         audio: {
                             long:
