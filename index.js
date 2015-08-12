@@ -16,7 +16,7 @@ app.post('/data', function(req, res){
     //req.pipe(process.stdout);
     //console.log(req);
     
-    console.log(req.body);
+    //console.log(req.body);
     var obj = req.body;
     // var excerpt = findExcerpt(obj);
     // var condition = findCondition(obj);
@@ -71,9 +71,9 @@ function setUpSocket(socket){
     shuffleArray(conditions);
     conditions.pointer = 0;
     socket.on('connection', function(sock){
-        console.log('connection to ' + socket.name);
+        //console.log('connection to ' + socket.name);
         var condition = nextInArray(conditions);
-        console.log(condition);
+        //console.log(condition);
         sock.emit('change-link', condition);
     });
 }

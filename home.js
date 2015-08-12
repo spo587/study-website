@@ -17,7 +17,7 @@ var thisPage = window.location.pathname;
 var socket = io(thisPage);
 
 socket.on('change-link', function(data){
-    console.log('event received');
+    //console.log('event received');
     setLink(data);
 });
 
