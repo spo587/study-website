@@ -37,7 +37,7 @@ Please indicate which of the three performances you believe was second best.
 Please indicate how difficult it was for you to decide your second preferred performance, 1 being not difficult at all,
 3 being moderately difficult, and 5 indicating that you chose randomly between at least two of the performances. <br>
 <% for (var i=1; i<6; i++) { %>
-    <input type='radio' name='difficulty2 + <%= path %>' value='<% i %>'> <%= i%>
+    <input type='radio' name='difficulty2 + <%= path %>' value='<%= i %>'> <%= i%>
     <% } %> 
 <br><br>
 </div>
