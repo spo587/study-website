@@ -154,6 +154,99 @@ var excerpts = {
                                 }
                             
                         }
+                    },
+                    excerpt4:
+                        {name: 'mozart',
+                        video: {
+                            long: 
+                                {links:
+                                    ['http://www.youtube.com/embed/lRpu-eajGYo', 
+                                    'http://www.youtube.com/embed/ZDCpiUX9hgg', 
+                                    'https://www.youtube.com/embed/5HVZSOw9tAQ']
+                                },
+                            short:
+                                {links:
+                                    ['http://www.youtube.com/embed/8EjHqU83q44',
+                                     'http://www.youtube.com/embed/MhOrSnypc4I', 
+                                     'http://www.youtube.com/embed/8_9W514v2xw']}
+                            },
+                        audio: {
+                            long:
+                                {links:
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/mozart/60-s/yang-60-s.wav', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/mozart/60-s/tito-60-s.wav', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/mozart/60-s/brevard-60-s.wav']
+                                },
+                            short:
+                                {links:
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/mozart/6-s/yang-6-s.wav',
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/mozart/6-s/tito-6-s.wav',
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/mozart/6-s/brevard-6-s.wav']
+                                }
+                            
+                        }
+                    },
+                    excerpt7:
+                        {name: 'schubert',
+                        video: {
+                            long: 
+                                {links:
+                                    ['https://www.youtube.com/embed/cJxF_I70l74', 
+                                    'http://www.youtube.com/embed/aBhN7wfbygk', 
+                                    'http://www.youtube.com/embed/KtE0VAP__Sw']
+                                },
+                            short:
+                                {links:
+                                    ['http://www.youtube.com/embed/XP7UxKIocw4',
+                                     'https://www.youtube.com/embed/ISiO7g6Mec4', 
+                                     'http://www.youtube.com/embed/cVNCNdyGThU']}
+                            },
+                        audio: {
+                            long:
+                                {links:
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/schubert/70-s/naumoff-70-s.wav', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/schubert/70-s/dutch-70-s.wav', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/schubert/70-s/harada-70-s.wav']
+                                },
+                            short:
+                                {links:
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/schubert/6-s/naumoff-6-s.wav',
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/schubert/6-s/dutch-6-s.wav',
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/schubert/6-s/harada-6-s.wav']
+                                }
+                            
+                        }
+                    },
+                    excerpt8:
+                        {name: 'bachAria',
+                        video: {
+                            long: 
+                                {links:
+                                    ['http://www.youtube.com/embed/RlU04jjM1bM', 
+                                    'http://www.youtube.com/embed/i8rjKYPTXhU', 
+                                    'http://www.youtube.com/embed/yBkOiCZe_nY']
+                                },
+                            short:
+                                {links:
+                                    ['http://www.youtube.com/embed/6CBXRyIozv4',
+                                     'http://www.youtube.com/embed/nwhbIE88GKU', 
+                                     'http://www.youtube.com/embed/n60yyNvr0uA']}
+                            },
+                        audio: {
+                            long:
+                                {links:
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-aria/60-s/vanbloss-60-s.wav', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-aria/60-s/koroliov-60-s.wav', 
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-aria/60-s/angelich-60-s.wav']
+                                },
+                            short:
+                                {links:
+                                    ['https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-aria/6-s/vanbloss-6-s.wav',
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-aria/6-s/koroliov-6-s.wav',
+                                    'https://dl.dropboxusercontent.com/u/95890750/study-website/gbv-aria/6-s/angelich-6-s.wav']
+                                }
+                            
+                        }
                     }
                 };
 
