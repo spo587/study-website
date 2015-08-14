@@ -10,20 +10,103 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser);
 
+// var mysql = require('mysql');
+
+
+// //var query = connection.query('SELECT * FROM http://localhost:3000/index.html');
+
+// var connection = mysql.createConnection(
+//     {
+//       host     : 'sql5.freemysqlhosting.net',
+//       port     : '3306',
+//       user     : 'sql586865',
+//       password : 'rN9!gV3*',
+//       database : 'sql586865'
+//     } ); 
+
+// connection.connect();
+// var example = {data1: 'test', data2: 'test2'}
+// connection.query('USE sql586865', function(err, rows, fields) {
+//   if (err) throw err;
+//   console.log('working');
+// });
+//   //console.log(rows);
+//   //useOK(connection);
+// // connection.query(
+// //   'CREATE TABLE table1'+
+// //         '(id INT(11) AUTO_INCREMENT, '+
+// //         'title VARCHAR(255), '+
+// //         'text TEXT, '+
+// //         'created DATETIME, '+
+// //         'PRIMARY KEY (id));', function(err, results){
+// //     if (err) {
+// //         console.log('error: ' + err.message);
+// //         throw err;
+// //     }
+// //     console.log('table ready');
+// // });
+
+
+// var useOK = function(connection){
+//     connection.query(
+//         'CREATE TABLE table1'+
+//         '(id INT(11) AUTO_INCREMENT, '+
+//         'title VARCHAR(255), '+
+//         'text TEXT, '+
+//         'created DATETIME, '+
+//         'PRIMARY KEY (id));', function(err, results) {
+//             if (err) {
+//                 console.log("ERROR: " + err.message);
+//                 throw err;
+//             }
+//             console.log("table ready");
+//             tableReady(connection);
+//         }
+//     );
+// }
+
+// var tableReady = function(connection){
+
+// }
+
+
+// connection.end();
+
 
 app.post('/data', function(req, res){
-    //console.log(JSON.stringify(req.body));
-    //req.pipe(process.stdout);
-    //console.log(req);
-    
-    //console.log(req.body);
     var obj = req.body;
-    // var excerpt = findExcerpt(obj);
-    // var condition = findCondition(obj);
-    // var winner = findWinner(obj);
-    // var rankings = findRankings(obj);
-    db.data.insert({data: obj})
+    var toStore;
+    listProps(obj, function(prop){
+        if (prop.indexOf('/') != -1){
+            //console.log(prop)
+            var conditionArray = prop.split('/');
+            var condition = conditionArray[3];
+            var participantType = conditionArray[1];
+            var excerpt = conditionArray[2][conditionArray[2].length - 1];
+            if (conditionArray[conditionArray.length - 1] === 'part2'){
+                var part = '2';
+            }
+            else {
+                var part = '1';
+            }
+            var winner = obj[prop];
+            toStore = {condition: condition, winner: winner, participantType: participantType, excerpt: excerpt, part: part};
+        }
+        else {
+            toStore[prop] = obj[prop];
+        }
+            
+    });
+    db.data.insert(toStore); 
 });
+
+var listProps = function(obj, func){
+    for (prop in obj){
+        if (obj.hasOwnProperty(prop)){
+            func(prop);
+        }
+    }
+}
 
 
 var Datastore = require('nedb'), db = {}; //new Datastore({filename: 'test2', autoload: true});
