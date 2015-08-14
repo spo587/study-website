@@ -126,9 +126,25 @@ var testDB = function(connection){
     connection.end();
 }
 
+var doDBStuff = function(func){
+    var connection = mysql.createConnection(
+        {
+          host     : 'sql5.freemysqlhosting.net',
+          port     : '3306',
+          user     : 'sql586865',
+          password : 'rN9!gV3*',
+          database : 'sql586865'
+        } ); 
+    connection.connect();
+    return func(connection);
+}
 //testDB(connection);
-
-
+// var PARTICIPANTTYPES = ['p', 'a', 'm'];
+// PARTICIPANTTYPES.forEach(function(participantType){
+//     doDBStuff(function(connection){
+//         makeTable(connection, participantType);
+//     });
+// });
 
 app.post('/data', function(req, res){
     var obj = req.body;
@@ -155,19 +171,15 @@ app.post('/data', function(req, res){
             
     });
     db.data.insert(toStore);
-    var connection = mysql.createConnection(
-        {
-          host     : 'sql5.freemysqlhosting.net',
-          port     : '3306',
-          user     : 'sql586865',
-          password : 'rN9!gV3*',
-          database : 'sql586865'
-        } ); 
-    connection.connect();
-    insertData(connection, 'test3', toStore);
-    getData(connection, 'test3');
-    connection.end();
+    var toDo = function(connection){
+        insertData(connection, toStore.participantType, toStore);
+        getData(connection, toStore.participantType);
+        connection.end();
+    }
+    doDBStuff(toDo);
+
 });
+
 
 var listProps = function(obj, func){
     for (prop in obj){
