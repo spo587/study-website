@@ -8,69 +8,126 @@ var serve = server.createServer(app);
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser);
 
-// var mysql = require('mysql');
+var mysql = require('mysql');
 
 
-// //var query = connection.query('SELECT * FROM http://localhost:3000/index.html');
 
-// var connection = mysql.createConnection(
-//     {
-//       host     : 'sql5.freemysqlhosting.net',
-//       port     : '3306',
-//       user     : 'sql586865',
-//       password : 'rN9!gV3*',
-//       database : 'sql586865'
-//     } ); 
+//var example = {data1: 'test', data2: 'test2'}
 
-// connection.connect();
-// var example = {data1: 'test', data2: 'test2'}
+
 // connection.query('USE sql586865', function(err, rows, fields) {
 //   if (err) throw err;
 //   console.log('working');
 // });
-//   //console.log(rows);
-//   //useOK(connection);
-// // connection.query(
-// //   'CREATE TABLE table1'+
-// //         '(id INT(11) AUTO_INCREMENT, '+
-// //         'title VARCHAR(255), '+
-// //         'text TEXT, '+
-// //         'created DATETIME, '+
-// //         'PRIMARY KEY (id));', function(err, results){
-// //     if (err) {
-// //         console.log('error: ' + err.message);
-// //         throw err;
-// //     }
-// //     console.log('table ready');
-// // });
-
-
-// var useOK = function(connection){
-//     connection.query(
-//         'CREATE TABLE table1'+
+  //console.log(rows);
+  //useOK(connection);
+// connection.query(
+//   'CREATE TABLE table1'+
 //         '(id INT(11) AUTO_INCREMENT, '+
 //         'title VARCHAR(255), '+
 //         'text TEXT, '+
 //         'created DATETIME, '+
-//         'PRIMARY KEY (id));', function(err, results) {
-//             if (err) {
-//                 console.log("ERROR: " + err.message);
-//                 throw err;
-//             }
-//             console.log("table ready");
-//             tableReady(connection);
-//         }
-//     );
-// }
+//         'PRIMARY KEY (id));', function(err, results){
+//     if (err) {
+//         console.log('error: ' + err.message);
+//         throw err;
+//     }
+//     console.log('table ready');
+// });
+
+
+var makeTable = function(connection, tablename){
+    connection.query(
+        'CREATE TABLE ' + tablename +
+        '(id INT(11) AUTO_INCREMENT, '+
+        'excrpt TEXT, '+
+        'cond TEXT, '+
+        'part TEXT, '+
+        'winner TEXT, '+
+        'diff TEXT, '+
+        'second TEXT, '+
+        'diff2 TEXT, '+
+        'PRIMARY KEY (id));', function(err, results) {
+            if (err) {
+                console.log("ERROR: " + err.message);
+                throw err;
+            }
+            console.log("table ready");
+            //tableReady(connection);
+        }
+    );
+}
 
 // var tableReady = function(connection){
 
 // }
 
+// var makeColumn = function(connection, tablename, columnNamesArray){
+//     connection.query(
+//         columnNamesArray.forEach(function(columnName){
+//             'ALTER TABLE ' + tablename + ' ADD ' + columnName + ' VARCHAR(255)'
+//         })
+//     );
+// }
 
-// connection.end();
+var insertData = function(connection, tablename, obj){
+    connection.query(
+        'INSERT INTO ' + tablename +
+        ' SET excrpt = ?'+
+        ', cond = ?' +
+        ', part = ?' +
+        ', winner = ?' +
+        ', diff = ?' +
+        ', second = ?' +
+        ', diff2 = ?',
+        [obj.excerpt,
+         obj.condition,
+         obj.part,
+         obj.winner,
+         obj.difficulty,
+         obj.second,
+         obj.difficulty2],
+        function(err, results) {
+            if (err) {
+                console.log("ERROR: " + err.message);
+                throw err;
+            }
+            console.dir(results);
+            console.log("Inserted "+results.affectedRows+" row.");
+            console.log("The unique id was " + results.insertId);
+            //tableHasData(client);
+        }
+    );
+}
+
+var getData = function(connection, tablename){
+    connection.query(
+        'SELECT * FROM ' + tablename, function selectCb(err, results, fields){
+            if (err) {
+                console.log("ERROR: " + err.message);
+                throw err;
+            }
+            console.log("Got "+results.length+" Rows:");
+            console.log(results);
+            //console.log("The meta data about the columns:");
+            //console.log(fields);
+
+            }
+        );
+}
+
+var testDB = function(connection){
+    connection.connect();
+    makeTable(connection, 'test1');
+    //makeColumn(connection, 'table2', 'winner');
+    insertData(connection, 'test1', {winner: '2', excerpt: '4', condition: '9'});
+    getData(connection, 'test1');
+    connection.end();
+}
+
+//testDB(connection);
+
 
 
 app.post('/data', function(req, res){
@@ -97,7 +154,19 @@ app.post('/data', function(req, res){
         }
             
     });
-    db.data.insert(toStore); 
+    db.data.insert(toStore);
+    var connection = mysql.createConnection(
+        {
+          host     : 'sql5.freemysqlhosting.net',
+          port     : '3306',
+          user     : 'sql586865',
+          password : 'rN9!gV3*',
+          database : 'sql586865'
+        } ); 
+    connection.connect();
+    insertData(connection, 'test3', toStore);
+    getData(connection, 'test3');
+    connection.end();
 });
 
 var listProps = function(obj, func){
