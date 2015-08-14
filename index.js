@@ -225,7 +225,7 @@ app.post('/data', function(req, res){
                 var part = '1';
             }
             var winner = obj[prop];
-            toStore = {condition: condition, winner: winner, participantType: participantType, excerpt: excerpt, part: part};
+            toStore = {participantType: participantType, excerpt: excerpt, condition: condition, part: part, winner: winner};
         }
         else {
             toStore[prop] = obj[prop];
