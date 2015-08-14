@@ -17,7 +17,7 @@
 Please indicate how difficult it was for you to decide your preferred performance, 1 being not difficult at all,
 3 being moderately difficult, and 5 indicating that you chose randomly between at least two of the performances. <br>
 <% for (var i=1; i<6; i++) { %>
-    <input type='radio' name='difficulty + <%= path %>' value='<%= i %>'> <%= i%>
+    <input type='radio' name='difficulty' value='<%= i %>'> <%= i%>
     <% } %> 
 <br><br>
 </div>
@@ -25,11 +25,11 @@ Please indicate how difficult it was for you to decide your preferred performanc
 <div>
 Please indicate which of the three performances you believe was second best. 
 <br>
-<input type="radio" name="second + <%= path %>" value="1" > Pianist # 1
+<input type="radio" name="second" value="1" > Pianist # 1
 <br>
-<input type="radio" name="second + <%= path %>" value="2">Pianist # 2
+<input type="radio" name="second" value="2">Pianist # 2
 <br>
-<input type="radio" name="second + <%= path %>" value="3">Pianist # 3
+<input type="radio" name="second" value="3">Pianist # 3
 <br><br>
 </div>
 
@@ -37,7 +37,7 @@ Please indicate which of the three performances you believe was second best.
 Please indicate how difficult it was for you to decide your second preferred performance, 1 being not difficult at all,
 3 being moderately difficult, and 5 indicating that you chose randomly between at least two of the performances. <br>
 <% for (var i=1; i<6; i++) { %>
-    <input type='radio' name='difficulty2 + <%= path %>' value='<%= i %>'> <%= i%>
+    <input type='radio' name='difficulty2' value='<%= i %>'> <%= i%>
     <% } %> 
 <br><br>
 </div>
@@ -48,10 +48,17 @@ If you would like to share any information about what factors, musical, pianisti
 
 Did you recognize the music being played in the excerpts, or any of the pianists? If so, please say what section of what piece it was, or which pianist(s) you recognize (optional):<br>
 
-<textarea name="textarea" style="width:500px;height:50px;"></textarea>
+<textarea name="recognize" style="width:500px;height:50px;"></textarea>
 <br><br>
 
 If you had any issues streaming the audio or video, please make note of that here (e.g., video 2 was choppy, audio 1 failed to load) (optional): <br>
 
-<textarea name="textarea" style="width:500px;height:50px;"></textarea>
+<textarea name="streaming-issues" style="width:500px;height:50px;"></textarea>
+<br><br>
+
+We told you a little about what this experiment is about. Do you have any further ideas about what we're investigating (optional)? <br><br>
+<textarea name="purpose-of-study" style="width:500px;height:150px;"></textarea>
+<br><br>
+Any other feedback, thoughts or comments you'd like to share (optional)? <br><br>
+<textarea name="feedback" style="width:500px;height:150px;"></textarea>
 <br><br>

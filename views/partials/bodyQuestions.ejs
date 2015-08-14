@@ -17,7 +17,7 @@
 Please indicate how difficult it was for you to decide your preferred performance, 1 being not difficult at all,
 3 being moderately difficult, and 5 indicating that you chose randomly between at least two of the performances. <br>
 <% for (var i=1; i<6; i++) { %>
-    <input type='radio' name='difficulty + <%= path %>' value='<%= i %>'> <%= i%>
+    <input type='radio' name='difficulty' value='<%= i %>'> <%= i%>
     <% } %> 
 <br><br>
 </div>
@@ -25,11 +25,11 @@ Please indicate how difficult it was for you to decide your preferred performanc
 <div>
 Please indicate which of the three performances you believe was second best. 
 <br>
-<input type="radio" name="second + <%= path %>" value="1" > Pianist # 1
+<input type="radio" name="second" value="1" > Pianist # 1
 <br>
-<input type="radio" name="second + <%= path %>" value="2">Pianist # 2
+<input type="radio" name="second" value="2">Pianist # 2
 <br>
-<input type="radio" name="second + <%= path %>" value="3">Pianist # 3
+<input type="radio" name="second" value="3">Pianist # 3
 <br><br>
 </div>
 
@@ -37,7 +37,7 @@ Please indicate which of the three performances you believe was second best.
 Please indicate how difficult it was for you to decide your second preferred performance, 1 being not difficult at all,
 3 being moderately difficult, and 5 indicating that you chose randomly between at least two of the performances. <br>
 <% for (var i=1; i<6; i++) { %>
-    <input type='radio' name='difficulty2 + <%= path %>' value='<%= i %>'> <%= i%>
+    <input type='radio' name='difficulty2' value='<%= i %>'> <%= i%>
     <% } %> 
 <br><br>
 </div>
