@@ -48,6 +48,11 @@ var makeTable = function(connection, tablename){
         'diff TEXT, '+
         'second TEXT, '+
         'diff2 TEXT, '+
+        'infl TEXT, '+
+        'recog TEXT, '+
+        'str TEXT, '+
+        'purp TEXT, '+
+        'fb TEXT, '+
         'PRIMARY KEY (id));', function(err, results) {
             if (err) {
                 console.log("ERROR: " + err.message);
@@ -63,13 +68,14 @@ var makeTable = function(connection, tablename){
 
 // }
 
-// var makeColumn = function(connection, tablename, columnNamesArray){
-//     connection.query(
-//         columnNamesArray.forEach(function(columnName){
-//             'ALTER TABLE ' + tablename + ' ADD ' + columnName + ' VARCHAR(255)'
-//         })
-//     );
-// }
+var makeColumn = function(connection, tablename, columnNamesArray){
+    connection.query(
+        columnNamesArray.forEach(function(columnName){
+            'ALTER TABLE ' + tablename + ' ADD ' + columnName + ' TEXT'
+        })
+    );
+}
+
 
 var insertData = function(connection, tablename, obj){
     connection.query(
@@ -80,14 +86,24 @@ var insertData = function(connection, tablename, obj){
         ', winner = ?' +
         ', diff = ?' +
         ', second = ?' +
-        ', diff2 = ?',
+        ', diff2 = ?' +
+        ', infl = ?' +
+        ', recog = ?' +
+        ', str = ?' +
+        ', purp = ?' +
+        ', fb = ?' ,
         [obj.excerpt,
          obj.condition,
          obj.part,
          obj.winner,
          obj.difficulty,
          obj.second,
-         obj.difficulty2],
+         obj.difficulty2,
+         obj.influence,
+         obj.recognize,
+         obj['streaming-issues'],
+         obj['purpose-of-study'],
+         obj.feedback],
         function(err, results) {
             if (err) {
                 console.log("ERROR: " + err.message);
@@ -108,8 +124,10 @@ var getData = function(connection, tablename){
                 console.log("ERROR: " + err.message);
                 throw err;
             }
-            console.log("Got "+results.length+" Rows:");
-            console.log(results);
+            console.log("Got "+results.length+" Rows for table " + tablename);
+
+            var r = results;
+            console.log(r);
             //console.log("The meta data about the columns:");
             //console.log(fields);
 
@@ -117,14 +135,14 @@ var getData = function(connection, tablename){
         );
 }
 
-var testDB = function(connection){
-    connection.connect();
-    makeTable(connection, 'test1');
-    //makeColumn(connection, 'table2', 'winner');
-    insertData(connection, 'test1', {winner: '2', excerpt: '4', condition: '9'});
-    getData(connection, 'test1');
-    connection.end();
-}
+// var testDB = function(connection){
+//     connection.connect();
+//     makeTable(connection, 'test1');
+//     //makeColumn(connection, 'table2', 'winner');
+//     insertData(connection, 'test1', {winner: '2', excerpt: '4', condition: '9'});
+//     getData(connection, 'test1');
+//     connection.end();
+// }
 
 var doDBStuff = function(func){
     var connection = mysql.createConnection(
@@ -139,16 +157,50 @@ var doDBStuff = function(func){
     return func(connection);
 }
 
+// var addColumns = function(){
+//     var PARTICIPANTTYPES = ['p', 'a', 'm'];
+//     PARTICIPANTTYPES.forEach(function(participantType){
+//         doDBStuff(function(connection){
+//             //console.log('table for ' + participantType);
+//             var columnNamesArray = ['infl', 'recog', 'str', 'purp', 'fb'];
+//             makeColumn(connection, participantType, columnNamesArray)
+//         });
+//     });
+// }
+
+// addColumns();
+
+var makeNewTables = function(tableNamesArray){
+    tableNamesArray.forEach(function(tablename){
+        doDBStuff(function(connection){
+            makeTable(connection, tablename);
+        });
+    });
+}
+
+//makeNewTables(['p2', 'm2', 'a2']);
 
 var getAllData = function(){
-    var PARTICIPANTTYPES = ['p', 'a', 'm'];
+    var PARTICIPANTTYPES = ['p', 'a', 'm', 'p2', 'm2', 'a2'];
     PARTICIPANTTYPES.forEach(function(participantType){
         doDBStuff(function(connection){
-            console.log('table for ' + participantType);
+            //console.log('table for ' + participantType);
             getData(connection, participantType);
         });
     });
 }
+
+//getAllData();
+
+// var pipeData = function(participantType){
+    
+    
+//     doDBStuff(function(connection){
+//         //console.log('table for ' + participantType);
+//         return getData(connection, participantType);
+//     });
+// }
+
 
 //getAllData();
 
@@ -182,8 +234,8 @@ app.post('/data', function(req, res){
     });
     db.data.insert(toStore);
     var toDo = function(connection){
-        insertData(connection, toStore.participantType, toStore);
-        getData(connection, toStore.participantType);
+        insertData(connection, toStore.participantType + '2', toStore);
+        getData(connection, toStore.participantType + '2');
         connection.end();
     }
     doDBStuff(toDo);
