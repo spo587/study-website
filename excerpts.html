@@ -8,7 +8,7 @@ window.onload = function(){
     excerpts.forEach(function(excerptName){
         var link = document.createElement('a');
         link.href = path + '/' + excerptName;
-        link.text = excerptName;
+        link.innerHTML = excerptName;
         document.body.appendChild(link);
         var br = document.createElement('br');
         document.body.appendChild(br);
