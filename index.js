@@ -140,13 +140,17 @@ var doDBStuff = function(func){
 }
 
 
-//testDB(connection);
-// var PARTICIPANTTYPES = ['p', 'a', 'm'];
-// PARTICIPANTTYPES.forEach(function(participantType){
-//     doDBStuff(function(connection){
-//         makeTable(connection, participantType);
-//     });
-// });
+var getAllData = function(){
+    var PARTICIPANTTYPES = ['p', 'a', 'm'];
+    PARTICIPANTTYPES.forEach(function(participantType){
+        doDBStuff(function(connection){
+            console.log('table for ' + participantType);
+            getData(connection, participantType);
+        });
+    });
+}
+
+//getAllData();
 
 // doDBStuff(function(connection){
 //     getData(connection, 'p');
