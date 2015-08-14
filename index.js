@@ -138,12 +138,18 @@ var doDBStuff = function(func){
     connection.connect();
     return func(connection);
 }
+
+
 //testDB(connection);
 // var PARTICIPANTTYPES = ['p', 'a', 'm'];
 // PARTICIPANTTYPES.forEach(function(participantType){
 //     doDBStuff(function(connection){
 //         makeTable(connection, participantType);
 //     });
+// });
+
+// doDBStuff(function(connection){
+//     getData(connection, 'p');
 // });
 
 app.post('/data', function(req, res){
