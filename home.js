@@ -2,7 +2,7 @@ function setLink(url){
     //if (checkFirstVisit()){
     var link = document.createElement('a');
     link.href = window.location.pathname + '/' + url;
-    link.text = 'click here';
+    link.innerHTML = 'click here';
     document.body.appendChild(link);
     //}
     // else {
