@@ -133,6 +133,7 @@ var getData = function(connection, tablename){
 
             }
         );
+    //connection.end();
 }
 
 // var testDB = function(connection){
@@ -155,6 +156,20 @@ var doDBStuff = function(func){
         } ); 
     connection.connect();
     return func(connection);
+    //connection.end()
+}
+
+var makeConnection = function(){
+    var connection = mysql.createConnection(
+    {
+      host     : 'sql5.freemysqlhosting.net',
+      port     : '3306',
+      user     : 'sql586865',
+      password : 'rN9!gV3*',
+      database : 'sql586865'
+    } ); 
+    connection.connect();
+    return connection;
 }
 
 // var addColumns = function(){
@@ -183,10 +198,10 @@ var makeNewTables = function(tableNamesArray){
 var getAllData = function(){
     var PARTICIPANTTYPES = ['p', 'a', 'm', 'p2', 'm2', 'a2'];
     PARTICIPANTTYPES.forEach(function(participantType){
-        doDBStuff(function(connection){
-            //console.log('table for ' + participantType);
-            getData(connection, participantType);
-        });
+        var connection = makeConnection();
+        getData(connection, participantType);
+        console.log('closing connection');
+        connection.end();
     });
 }
 
@@ -210,7 +225,8 @@ var getAllData = function(){
 
 app.post('/data', function(req, res){
     var obj = req.body;
-    var toStore;
+    var toStore = {};
+    //console.log(obj);
     listProps(obj, function(prop){
         if (prop.indexOf('/') != -1){
             //console.log(prop)
@@ -228,17 +244,22 @@ app.post('/data', function(req, res){
             toStore = {participantType: participantType, excerpt: excerpt, condition: condition, part: part, winner: winner};
         }
         else {
+            //console.log(obj[prop])
             toStore[prop] = obj[prop];
         }
             
     });
+    //console.log(toStore);
     db.data.insert(toStore);
     var toDo = function(connection){
         insertData(connection, toStore.participantType + '2', toStore);
+        //console.log('data inserted into mysql table ' + toStore.participantType + '2');
         getData(connection, toStore.participantType + '2');
-        connection.end();
     }
-    doDBStuff(toDo);
+    var connection = makeConnection();
+    toDo(connection);
+    //console.log('closing connection');
+    connection.end();
 
 });
 
@@ -347,7 +368,9 @@ function getExcerptPages(pagePaths, excerpt, length, audioOrVideo){
     var secondAudioVideo = audioOrVideo === 'audio' ? 'video' : 'audio';
     pagePaths.forEach(function(page, index){
         var orders = [[0,1,2], [1,2,0], [2,1,0], [2,0,1], [0,2,1], [1,0,2]];
+        //(0,1,2,1,2,0,2,1,0,2,0,1,0,2,1,1,0,2)
         var secondPageOrders = [[1,2,0], [2,0,1], [1,0,2], [0,1,2], [2,1,0], [0,2,1]];
+        //1,2,0,2,0,1,1,0,2,0,1,2,2,1,0,0,2,1
         //console.log(excerpts[excerptPointers[excerpt]]);
         var links = getLinks(excerpts[excerpt][audioOrVideo][length].links, index, orders);
         var secondLinks = getLinks(excerpts[excerpt][secondAudioVideo][length].links, index, secondPageOrders);
