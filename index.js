@@ -187,13 +187,13 @@ var makeConnection = function(){
 
 var makeNewTables = function(tableNamesArray){
     tableNamesArray.forEach(function(tablename){
-        doDBStuff(function(connection){
-            makeTable(connection, tablename);
-        });
+        var connection = makeConnection();
+        makeTable(connection, tablename);
+        connection.end();
     });
 }
 
-//makeNewTables(['p2', 'm2', 'a2']);
+//makeNewTables(['a2']);
 
 var getAllData = function(){
     var PARTICIPANTTYPES = ['p', 'a', 'm', 'p2', 'm2', 'a2'];
@@ -254,7 +254,7 @@ app.post('/data', function(req, res){
     var toDo = function(connection){
         insertData(connection, toStore.participantType + '2', toStore);
         //console.log('data inserted into mysql table ' + toStore.participantType + '2');
-        getData(connection, toStore.participantType + '2');
+        //getData(connection, toStore.participantType + '2');
     }
     var connection = makeConnection();
     toDo(connection);
